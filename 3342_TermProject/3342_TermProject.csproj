@@ -81,13 +81,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Utilities\Utilities.csproj">
-      <Project>{6df7d4cc-7a6b-4017-991a-b1d313e0cbc0}</Project>
-      <Name>Utilities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TP_User\TP_User.csproj">
       <Project>{ea2ae734-d212-487d-98b3-1c4ce94ca810}</Project>
       <Name>TP_User</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{6df7d4cc-7a6b-4017-991a-b1d313e0cbc0}</Project>
+      <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
