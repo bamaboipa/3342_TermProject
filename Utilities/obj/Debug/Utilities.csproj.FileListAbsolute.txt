@@ -1,0 +1,10 @@
+E:\CIS3342SP2016\Utilities\bin\Debug\Utilities.dll
+E:\CIS3342SP2016\Utilities\bin\Debug\Utilities.pdb
+E:\CIS3342SP2016\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+E:\CIS3342SP2016\Utilities\obj\Debug\Utilities.dll
+E:\CIS3342SP2016\Utilities\obj\Debug\Utilities.pdb
+D:\3342_TermProject\Utilities\bin\Debug\Utilities.dll
+D:\3342_TermProject\Utilities\bin\Debug\Utilities.pdb
+D:\3342_TermProject\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+D:\3342_TermProject\Utilities\obj\Debug\Utilities.dll
+D:\3342_TermProject\Utilities\obj\Debug\Utilities.pdb
