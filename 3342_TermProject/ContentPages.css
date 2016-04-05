@@ -1,0 +1,77 @@
+﻿body {
+    font-family: Tahoma;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom:25px;
+    font-size: 18px;
+}
+
+.content {
+    background-color: #D9D9D9;
+    padding: 15px;
+    margin: auto;
+    position: relative;
+    top: 20px;
+    border-top-left-radius: 50px;
+}
+
+.navBar {
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: #73152D;
+    height: 40px;
+    color: white;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.footer {
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: #73152D;
+    height: 40px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.login {
+    position: relative;
+    left: 800px;
+    width: 600px;
+}
+
+.userRegistration {
+    position: relative;
+    left: 800px;
+    bottom: 200px;
+    width: 500px;
+}
+
+.siteInfo {
+    position: relative;
+    left: 50px;
+    border-color: #73152D;
+    padding: 20px;
+    border-radius: 25px;
+    border: 5px solid #73152D;
+    width: 500px;
+}
+
+.loginButton {
+     height: 35px;
+     width: 80px;
+     font-size: 18px;
+     position: relative;
+     left: 10px;
+}
+
+.OR {
+    font-size:40px;
+    font-family:'Buxton Sketch';
+}
+
+.textbox {
+    font-size: 18px;
+}
