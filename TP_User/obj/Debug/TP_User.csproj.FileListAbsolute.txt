@@ -1,2 +1,9 @@
 E:\CIS3342SP2016\CIS2242SP2016TermProject\TP_User\obj\Debug\TP_User.csprojResolveAssemblyReference.cache
 D:\3342_TermProject\TP_User\obj\Debug\TP_User.csprojResolveAssemblyReference.cache
+E:\3342_TermProject\TP_User\bin\Debug\TP_User.dll
+E:\3342_TermProject\TP_User\bin\Debug\TP_User.pdb
+E:\3342_TermProject\TP_User\bin\Debug\Utilities.dll
+E:\3342_TermProject\TP_User\bin\Debug\Utilities.pdb
+E:\3342_TermProject\TP_User\obj\Debug\TP_User.csprojResolveAssemblyReference.cache
+E:\3342_TermProject\TP_User\obj\Debug\TP_User.dll
+E:\3342_TermProject\TP_User\obj\Debug\TP_User.pdb
