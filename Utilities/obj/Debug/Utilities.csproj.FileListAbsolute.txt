@@ -9,6 +9,5 @@ E:\CIS3342SP2016\RealEstate\Utilities\obj\Debug\Utilities.dll
 E:\CIS3342SP2016\RealEstate\Utilities\obj\Debug\Utilities.pdb
 E:\3342_TermProject\Utilities\bin\Debug\Utilities.dll
 E:\3342_TermProject\Utilities\bin\Debug\Utilities.pdb
-E:\3342_TermProject\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
 E:\3342_TermProject\Utilities\obj\Debug\Utilities.dll
 E:\3342_TermProject\Utilities\obj\Debug\Utilities.pdb
