@@ -18,7 +18,7 @@
 .navBar {
     border-bottom-left-radius: 50px;
     border-top-right-radius: 50px;
-    background-color: #73152D;
+    background-color: #481883;
     height: 40px;
     color: white;
     padding-right: 10px;
@@ -29,7 +29,7 @@
 .footer {
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    background-color: #73152D;
+    background-color: #481883;
     height: 40px;
     padding-right: 10px;
     padding-top: 5px;
@@ -38,24 +38,24 @@
 
 .login {
     position: relative;
-    left: 800px;
+    left: 675px;
     width: 600px;
 }
 
 .userRegistration {
     position: relative;
-    left: 800px;
+    left: 675px;
     bottom: 200px;
     width: 500px;
 }
 
 .siteInfo {
     position: relative;
-    left: 50px;
-    border-color: #73152D;
+    left: 40px;
+    border-color: #481883;
     padding: 20px;
     border-radius: 25px;
-    border: 5px solid #73152D;
+    border: 5px solid #481883;
     width: 500px;
 }
 
@@ -74,4 +74,43 @@
 
 .textbox {
     font-size: 18px;
+}
+
+.dropdown {
+    font-size: 17px;
+}
+
+.button {
+    font-size: 18px;
+    height: 40px;
+    background-color: #481883;
+    color: white;
+    font-weight: bold;
+}
+
+.preferenceApplyButton {
+    position:relative;
+    bottom: 250px;
+}
+
+    .button:hover {
+        cursor: pointer;
+    }
+
+.securityQuestions {
+    width: 550px;
+    position: relative;
+    left: 650px;
+    bottom: 513px;
+}
+
+.preferencesHeight {
+    height: 725px;
+}
+
+.errorPreferences {
+    color: red;
+    position: relative;
+    left: 660px;
+    bottom: 40px;
 }
