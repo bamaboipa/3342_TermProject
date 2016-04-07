@@ -11,3 +11,8 @@ E:\3342_TermProject\Utilities\bin\Debug\Utilities.dll
 E:\3342_TermProject\Utilities\bin\Debug\Utilities.pdb
 E:\3342_TermProject\Utilities\obj\Debug\Utilities.dll
 E:\3342_TermProject\Utilities\obj\Debug\Utilities.pdb
+D:\3342_TermProject\Utilities\bin\Debug\Utilities.dll
+D:\3342_TermProject\Utilities\bin\Debug\Utilities.pdb
+D:\3342_TermProject\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+D:\3342_TermProject\Utilities\obj\Debug\Utilities.dll
+D:\3342_TermProject\Utilities\obj\Debug\Utilities.pdb
