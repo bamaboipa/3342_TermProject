@@ -59,7 +59,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ContentPages.css" />
+<<<<<<< HEAD
     <Content Include="Preferences.aspx" />
+=======
+    <Content Include="Default.aspx" />
+    <Content Include="PasswordRecover.aspx" />
+>>>>>>> upstream/master
     <Content Include="Registration.aspx" />
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -73,6 +78,13 @@
     </Compile>
     <Compile Include="Preferences.aspx.designer.cs">
       <DependentUpon>Preferences.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordRecover.aspx.cs">
+      <DependentUpon>PasswordRecover.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasswordRecover.aspx.designer.cs">
+      <DependentUpon>PasswordRecover.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration.aspx.cs">

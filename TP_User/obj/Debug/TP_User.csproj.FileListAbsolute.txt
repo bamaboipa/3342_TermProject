@@ -1,11 +1,4 @@
 E:\CIS3342SP2016\CIS2242SP2016TermProject\TP_User\obj\Debug\TP_User.csprojResolveAssemblyReference.cache
-E:\3342_TermProject\TP_User\bin\Debug\TP_User.dll
-E:\3342_TermProject\TP_User\bin\Debug\TP_User.pdb
-E:\3342_TermProject\TP_User\bin\Debug\Utilities.dll
-E:\3342_TermProject\TP_User\bin\Debug\Utilities.pdb
-E:\3342_TermProject\TP_User\obj\Debug\TP_User.csprojResolveAssemblyReference.cache
-E:\3342_TermProject\TP_User\obj\Debug\TP_User.dll
-E:\3342_TermProject\TP_User\obj\Debug\TP_User.pdb
 D:\3342_TermProject\TP_User\bin\Debug\TP_User.dll
 D:\3342_TermProject\TP_User\bin\Debug\TP_User.pdb
 D:\3342_TermProject\TP_User\bin\Debug\Utilities.dll
@@ -13,6 +6,7 @@ D:\3342_TermProject\TP_User\bin\Debug\Utilities.pdb
 D:\3342_TermProject\TP_User\obj\Debug\TP_User.csprojResolveAssemblyReference.cache
 D:\3342_TermProject\TP_User\obj\Debug\TP_User.dll
 D:\3342_TermProject\TP_User\obj\Debug\TP_User.pdb
+<<<<<<< HEAD
 C:\Users\Melissa\Desktop\3342_TermProject\TP_User\bin\Debug\TP_User.dll
 C:\Users\Melissa\Desktop\3342_TermProject\TP_User\bin\Debug\TP_User.pdb
 C:\Users\Melissa\Desktop\3342_TermProject\TP_User\bin\Debug\Utilities.dll
@@ -20,3 +14,12 @@ C:\Users\Melissa\Desktop\3342_TermProject\TP_User\bin\Debug\Utilities.pdb
 C:\Users\Melissa\Desktop\3342_TermProject\TP_User\obj\Debug\TP_User.csprojResolveAssemblyReference.cache
 C:\Users\Melissa\Desktop\3342_TermProject\TP_User\obj\Debug\TP_User.dll
 C:\Users\Melissa\Desktop\3342_TermProject\TP_User\obj\Debug\TP_User.pdb
+=======
+E:\3342_TermProject\TP_User\bin\Debug\TP_User.dll
+E:\3342_TermProject\TP_User\bin\Debug\TP_User.pdb
+E:\3342_TermProject\TP_User\bin\Debug\Utilities.dll
+E:\3342_TermProject\TP_User\bin\Debug\Utilities.pdb
+E:\3342_TermProject\TP_User\obj\Debug\TP_User.csprojResolveAssemblyReference.cache
+E:\3342_TermProject\TP_User\obj\Debug\TP_User.dll
+E:\3342_TermProject\TP_User\obj\Debug\TP_User.pdb
+>>>>>>> upstream/master
