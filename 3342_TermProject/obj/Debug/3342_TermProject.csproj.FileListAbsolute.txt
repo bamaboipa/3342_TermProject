@@ -17,3 +17,12 @@ D:\3342_TermProject\3342_TermProject\bin\Utilities.pdb
 D:\3342_TermProject\3342_TermProject\obj\Debug\3342_TermProject.csprojResolveAssemblyReference.cache
 D:\3342_TermProject\3342_TermProject\obj\Debug\3342_TermProject.dll
 D:\3342_TermProject\3342_TermProject\obj\Debug\3342_TermProject.pdb
+C:\Users\Melissa\Desktop\3342_TermProject\3342_TermProject\bin\3342_TermProject.dll
+C:\Users\Melissa\Desktop\3342_TermProject\3342_TermProject\bin\3342_TermProject.pdb
+C:\Users\Melissa\Desktop\3342_TermProject\3342_TermProject\bin\TP_User.dll
+C:\Users\Melissa\Desktop\3342_TermProject\3342_TermProject\bin\Utilities.dll
+C:\Users\Melissa\Desktop\3342_TermProject\3342_TermProject\bin\TP_User.pdb
+C:\Users\Melissa\Desktop\3342_TermProject\3342_TermProject\bin\Utilities.pdb
+C:\Users\Melissa\Desktop\3342_TermProject\3342_TermProject\obj\Debug\3342_TermProject.csprojResolveAssemblyReference.cache
+C:\Users\Melissa\Desktop\3342_TermProject\3342_TermProject\obj\Debug\3342_TermProject.dll
+C:\Users\Melissa\Desktop\3342_TermProject\3342_TermProject\obj\Debug\3342_TermProject.pdb

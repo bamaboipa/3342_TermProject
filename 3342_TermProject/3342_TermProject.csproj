@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ContentPages.css" />
-    <Content Include="Default.aspx" />
+    <Content Include="Preferences.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -67,12 +67,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Default.aspx.cs">
+    <Compile Include="Preferences.aspx.cs">
+      <DependentUpon>Preferences.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Preferences.aspx.designer.cs">
+      <DependentUpon>Preferences.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration.aspx.cs">
