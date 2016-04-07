@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TermProject {
+namespace _3342_TermProject {
     
     
-    public partial class styleTester {
+    public partial class PasswordRecover {
         
         /// <summary>
         /// form1 control.
@@ -22,129 +22,138 @@ namespace TermProject {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtEmail control.
+        /// divQuestion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divQuestion;
         
         /// <summary>
-        /// txtPassword control.
+        /// txtSecQuest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        protected global::System.Web.UI.WebControls.TextBox txtSecQuest;
         
         /// <summary>
-        /// btnLogin control.
+        /// txtSecAnswer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
+        protected global::System.Web.UI.WebControls.TextBox txtSecAnswer;
         
         /// <summary>
-        /// chkStayLoggedIn control.
+        /// lblResponseQuestion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkStayLoggedIn;
+        protected global::System.Web.UI.WebControls.Label lblResponseQuestion;
         
         /// <summary>
-        /// btnRecoverPassword control.
+        /// btnUpdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnRecoverPassword;
+        protected global::System.Web.UI.WebControls.Button btnUpdate;
         
         /// <summary>
-        /// lblLogIn control.
+        /// divEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLogIn;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divEmail;
         
         /// <summary>
-        /// txtFirstName control.
+        /// lblEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFirstName;
+        protected global::System.Web.UI.WebControls.Label lblEmail;
         
         /// <summary>
-        /// txtLastName control.
+        /// txtUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLastName;
+        protected global::System.Web.UI.WebControls.TextBox txtUserName;
         
         /// <summary>
-        /// txtNewAccountEmail control.
+        /// lblResponseEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNewAccountEmail;
+        protected global::System.Web.UI.WebControls.Label lblResponseEmail;
         
         /// <summary>
-        /// txtNewAccountPassword control.
+        /// btnSubmitEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNewAccountPassword;
+        protected global::System.Web.UI.WebControls.Button btnSubmitEmail;
         
         /// <summary>
-        /// txtAddress control.
+        /// divPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAddress;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPassword;
         
         /// <summary>
-        /// txtPhoneNumber control.
+        /// lblUpdatePass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber;
+        protected global::System.Web.UI.WebControls.Label lblUpdatePass;
         
         /// <summary>
-        /// lblRegResponse control.
+        /// txtUpdatePass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRegResponse;
+        protected global::System.Web.UI.WebControls.TextBox txtUpdatePass;
         
         /// <summary>
-        /// btnCreateAccount control.
+        /// lblResponsePass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreateAccount;
+        protected global::System.Web.UI.WebControls.Label lblResponsePass;
+        
+        /// <summary>
+        /// btnGetPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGetPassword;
     }
 }

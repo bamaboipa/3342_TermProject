@@ -83,7 +83,9 @@
                 </tr>
                 <tr>
                     <td><asp:CheckBox ID="chkStayLoggedIn" runat="server" Text="Keep Me Logged In!"  /></td>
-                    <td><a href="">Forgot Your Password?</a>
+                    <td>
+                        <asp:LinkButton ID="btnRecoverPassword" runat="server" OnClick="btnRecoverPassword_Click">Forgot Your Password?</asp:LinkButton>
+                      <%--  <a href="PasswordRecover.aspx">Forgot Your Password?</a>--%>
                         
                         <asp:Label ID="lblLogIn" runat="server" BorderColor="#73152D" BorderStyle="Solid" ForeColor="#73152D" Text="lblLoginREsp" Visible="False"></asp:Label>
                        </td>
