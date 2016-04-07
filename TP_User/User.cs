@@ -151,6 +151,25 @@ namespace TP_User
 
             return myUser;
         }
+        public DataSet getSecQuestion(string eMail)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.Parameters.Clear();
+
+            objCommand.CommandType = CommandType.StoredProcedure;
+            objCommand.CommandText = "TP_GETSECQUESTION";
+
+            objCommand.Parameters.AddWithValue("@Email", eMail);
+
+            DataSet dsSecurity = objDB.GetDataSetUsingCmdObj(objCommand);
+
+            objDB.CloseConnection();
+
+            return dsSecurity;
+        }
+       
     }  
     
 }
