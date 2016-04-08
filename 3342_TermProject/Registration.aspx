@@ -1,4 +1,4 @@
-﻿<%@ Page MasterPageFile="~/Site1.Master" Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="3342_TermProject.styleTester" %>
+﻿<%@ Page MasterPageFile="~/Site1.Master" Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="_3342_TermProject.styleTester" %>
 <asp:Content ContentPlaceHolderId="ContentPlaceHolder1" runat="server">
     <!DOCTYPE html>
 
@@ -78,15 +78,14 @@
                 </tr>
                 <tr>
                     <td><asp:TextBox CssClass="textbox" ID="txtEmail" runat="server"></asp:TextBox></td>
-                    <td><asp:TextBox CssClass="textbox" ID="txtPassword" runat="server"></asp:TextBox></td>
+                    <td><asp:TextBox CssClass="textbox" ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox></td>
                     <td><asp:Button ID="btnLogin" CssClass="loginButton" runat="server" Text="Login" OnClientClick="ValidateUser" OnClick="btnLogin_Click"/></td>
                 </tr>
                 <tr>
                     <td><asp:CheckBox ID="chkStayLoggedIn" runat="server" Text="Keep Me Logged In!"  /></td>
                     <td>
                         <asp:LinkButton ID="btnRecoverPassword" runat="server" OnClick="btnRecoverPassword_Click">Forgot Your Password?</asp:LinkButton>
-                      <%--  <a href="PasswordRecover.aspx">Forgot Your Password?</a>--%>
-                        
+                     
                         <asp:Label ID="lblLogIn" runat="server" BorderColor="#73152D" BorderStyle="Solid" ForeColor="#73152D" Text="lblLoginREsp" Visible="False"></asp:Label>
                        </td>
                 </tr>
