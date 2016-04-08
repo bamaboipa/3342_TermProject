@@ -127,30 +127,38 @@ namespace TP_User
             objCommand.Parameters.AddWithValue("@Password", password);
 
             DataSet dsUser = objDB.GetDataSetUsingCmdObj(objCommand);
-         
-            foreach (DataTable  table   in dsUser.Tables)
-            {
-                foreach (DataRow row in table.Rows)
+
+           
+           
+                foreach (DataTable table in dsUser.Tables)
                 {
-                    if (row["Email"].ToString().ToLower() == eMail.ToLower() && row["Password"].ToString() == Password)
-                    {
-                        myUser.eMail = eMail;
-                        myUser.firstName = row["FirstName"].ToString();
-                        myUser.lastName = row["LastName"].ToString();
-                        myUser.address = row["Address"].ToString();
-                        myUser.ImagePreferenceId = int.Parse(row["ImagePreferenceID"].ToString());
-                        myUser.statusPreferenceID = int.Parse(row["StatusPreferenceID"].ToString());
-                        myUser.personalPreferenceID = int.Parse(row["PersonalPreferenceID"].ToString());
-                    }
-                    else
-                    {
+                    if (table.Rows.Count == 0)
+	                     {
                         myUser.firstName = "";
+
+                        }
+                        else
+                        {
+                            foreach (DataRow row in table.Rows)
+                         {
+                        if (row["Email"].ToString().ToLower() == eMail.ToLower() && row["Password"].ToString() == Password)
+                        {
+                            myUser.eMail = eMail;
+                            myUser.password = password;
+                            myUser.firstName = row["FirstName"].ToString();
+                            myUser.lastName = row["LastName"].ToString();
+                            myUser.address = row["Address"].ToString();
+                            myUser.ImagePreferenceId = int.Parse(row["ImagePreferenceID"].ToString());
+                            myUser.statusPreferenceID = int.Parse(row["StatusPreferenceID"].ToString());
+                            myUser.personalPreferenceID = int.Parse(row["PersonalPreferenceID"].ToString());
+                        }
+                        }
                     }
-                }
+                } return myUser;
             }
 
-            return myUser;
-        }
+            
+        
         public DataSet getSecQuestion(string eMail)
         {
             DBConnect objDB = new DBConnect();

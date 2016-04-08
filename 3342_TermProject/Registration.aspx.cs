@@ -75,7 +75,7 @@ namespace _3342_TermProject
             }
             else if (myUser.emailExists(myUser.EMail) == true)
             {
-                myUser.verifyUser(txtEmail.Text, txtPassword.Text);
+               myUser = myUser.verifyUser(txtEmail.Text, txtPassword.Text);
                 if (myUser.FirstName == "")
                 {
                     lblLogIn.Text = "Username and Password Combination in incorrect";
@@ -84,7 +84,7 @@ namespace _3342_TermProject
                 else
                 {
                     Session["myUser"] = myUser;
-                    Response.Redirect("");
+                    Response.Redirect("UserHomePage.aspx");
                 }
             }
             else
