@@ -14,10 +14,16 @@ namespace _3342_TermProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ddlTheme.SelectedIndex = 3;
-            ddlFont.SelectedIndex = 2;
-            ddlFontColor.SelectedIndex = 1;
-            ddlLoginPreference.SelectedIndex = 2;
+            if (!IsPostBack)
+            {
+                ddlTheme.SelectedIndex = 3;
+                ddlFont.SelectedIndex = 2;
+                ddlFontColor.SelectedIndex = 1;
+                ddlLoginPreference.SelectedIndex = 2;
+                ddlPhotos.SelectedIndex = 1;
+                ddlProfileInformation.SelectedIndex = 1;
+                ddlContactInfo.SelectedIndex = 1;
+            }
         }
 
         protected void btnApply_Click(object sender, EventArgs e)
@@ -27,9 +33,43 @@ namespace _3342_TermProject
 
         private void UpdateLoginPreferences()
         {
-            SqlCommand loginPrefCommand = new SqlCommand();
-            loginPrefCommand.CommandType = CommandType.StoredProcedure;
-            loginPrefCommand.CommandText = "";
+            DBConnect db = new DBConnect();
+            HttpCookie chocolateCookie = Request.Cookies["HoneyCookie"];
+            chocolateCookie.Values["Login"] = ddlLoginPreference.SelectedValue;
+            string email = chocolateCookie.Values["Email"].ToString();
+            SqlCommand privacyCommand = new SqlCommand();
+            privacyCommand.CommandType = CommandType.StoredProcedure;
+            privacyCommand.CommandText = "TP_UPDATEPRIVACY";
+            privacyCommand.Parameters.AddWithValue("@email", email);
+            privacyCommand.Parameters.AddWithValue("@imagePref", ddlPhotos.SelectedValue);
+            privacyCommand.Parameters.AddWithValue("@statusPref", ddlProfileInformation.SelectedValue);
+            privacyCommand.Parameters.AddWithValue("@personalPref", ddlContactInfo.SelectedValue);
+            db.DoUpdateUsingCmdObj(privacyCommand);
+            SqlCommand themeCommand = new SqlCommand();
+            themeCommand.CommandType = CommandType.StoredProcedure;
+            themeCommand.CommandText = "TP_UPDATETHEME";
+            themeCommand.Parameters.AddWithValue("@email", email);
+            themeCommand.Parameters.AddWithValue("@bannerColor", ddlTheme.SelectedValue);
+            themeCommand.Parameters.AddWithValue("@font", ddlFont.SelectedValue);
+            themeCommand.Parameters.AddWithValue("@fontColor", ddlFontColor.SelectedValue);
+            db.DoUpdateUsingCmdObj(themeCommand);
+            Response.Redirect("UserHomePage.aspx");
+        }
+
+        protected void btnSetSecurity_Click(object sender, EventArgs e)
+        {
+            DBConnect db = new DBConnect();
+            HttpCookie chocolateCookie = Request.Cookies["HoneyCookie"];
+            chocolateCookie.Values["Login"] = ddlLoginPreference.SelectedValue;
+            string email = chocolateCookie.Values["Email"].ToString();
+            if (txtFathersMiddle.Text != "" && txtMaidenName.Text != "" && txtStreet.Text != "")
+            {
+                SqlCommand secQuestionsCommand = new SqlCommand();
+                secQuestionsCommand.CommandType = CommandType.StoredProcedure;
+                secQuestionsCommand.CommandText = "TP_ADDSECQUESTION";
+                secQuestionsCommand.Parameters.AddWithValue("@Email", email);
+                secQuestionsCommand.Parameters.AddWithValue("@Question", email);//TODO not email
+            }
         }
 
     }

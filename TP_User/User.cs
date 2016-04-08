@@ -96,9 +96,7 @@ namespace TP_User
                 objCommand.Parameters.AddWithValue("@LastName", user.lastName);
                 objCommand.Parameters.AddWithValue("@Address", user.address);
                 objCommand.Parameters.AddWithValue("@Password", user.password);
-                objCommand.Parameters.AddWithValue("@ImagePreferenceId", user.imagePreferenceID);
-                objCommand.Parameters.AddWithValue("@StatusPreferenceId", user.statusPreferenceID);
-                objCommand.Parameters.AddWithValue("@ContactPreferenceID", user.personalPreferenceID);
+                objCommand.Parameters.AddWithValue("@Phone", user.phone);
 
                 objDB.DoUpdateUsingCmdObj(objCommand);
                 objDB.CloseConnection();
@@ -130,26 +128,37 @@ namespace TP_User
 
             DataSet dsUser = objDB.GetDataSetUsingCmdObj(objCommand);
 
-            foreach (DataRow row  in dsUser.Tables)
-            {
-                if (row["Email"].ToString().ToLower() == eMail.ToLower() && row["Password"].ToString() == Password)
+           
+           
+                foreach (DataTable table in dsUser.Tables)
                 {
-                    myUser.eMail = eMail;
-                    myUser.firstName = row["FirstName"].ToString();
-                    myUser.lastName = row["LastName"].ToString();
-                    myUser.address = row["Address"].ToString();
-                    myUser.ImagePreferenceId = int.Parse(row["ImagePreferenceID"].ToString());
-                    myUser.statusPreferenceID = int.Parse(row["StatusPreferenceID"].ToString());
-                    myUser.personalPreferenceID = int.Parse(row["PersonalPreferenceID"].ToString());
-                }
-                else
-                {
-                    myUser.firstName = "";
-                }
+                    if (table.Rows.Count == 0)
+	                     {
+                        myUser.firstName = "";
+
+                        }
+                        else
+                        {
+                            foreach (DataRow row in table.Rows)
+                         {
+                        if (row["Email"].ToString().ToLower() == eMail.ToLower() && row["Password"].ToString() == Password)
+                        {
+                            myUser.eMail = eMail;
+                            myUser.password = password;
+                            myUser.firstName = row["FirstName"].ToString();
+                            myUser.lastName = row["LastName"].ToString();
+                            myUser.address = row["Address"].ToString();
+                            myUser.ImagePreferenceId = int.Parse(row["ImagePreferenceID"].ToString());
+                            myUser.statusPreferenceID = int.Parse(row["StatusPreferenceID"].ToString());
+                            myUser.personalPreferenceID = int.Parse(row["PersonalPreferenceID"].ToString());
+                        }
+                        }
+                    }
+                } return myUser;
             }
 
-            return myUser;
-        }
+            
+        
         public DataSet getSecQuestion(string eMail)
         {
             DBConnect objDB = new DBConnect();
@@ -174,23 +183,30 @@ namespace TP_User
             SqlCommand objCommand = new SqlCommand();
 
             objCommand.Parameters.Clear();
-            try
-            {
-                objCommand.CommandType = CommandType.StoredProcedure;
+            
+            objCommand.CommandType = CommandType.StoredProcedure;
                 objCommand.CommandText = "GETUSERBYEMAIL";
 
-                objCommand.Parameters.AddWithValue("@Eamil", eMail);
+                objCommand.Parameters.AddWithValue("@EMail", eMail);
 
-                objDB.GetDataSetUsingCmdObj(objCommand);
+
+                DataSet dsEmail = objDB.GetDataSetUsingCmdObj(objCommand);
                 objDB.CloseConnection();
-
-                return true;
-            }
-            catch (Exception)
-            {
-
-                return false;
-            }
+                Boolean isEmail = false;
+                foreach (DataTable table in dsEmail.Tables)
+                {
+                    foreach (DataRow row in table.Rows)
+                    {
+                        if (row["Email"].ToString() == "")
+                        {
+                            isEmail = false;
+                        }
+                        else
+                        {
+                            isEmail = true;
+                        }
+                    }
+                } return isEmail;
            
         }
         public Boolean updatePassword(string password, string eMail)

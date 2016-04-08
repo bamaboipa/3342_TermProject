@@ -44,7 +44,18 @@ namespace _3342_TermProject
 
                 if (myUser.addUser(myUser) == true)
                 {
+                    DBConnect db = new DBConnect();
+                    SqlCommand addToPreferences = new SqlCommand();
+                    addToPreferences.CommandType = CommandType.StoredProcedure;
+                    addToPreferences.CommandText = "TP_ADDUSERTOPREFERENCES";
+                    addToPreferences.Parameters.AddWithValue("@email", myUser.EMail);
+                    db.DoUpdateUsingCmdObj(addToPreferences);
                     Session["myUser"] = myUser;
+                    HttpCookie yourCookie = new HttpCookie("HoneyCookie");
+                    yourCookie.Values["Login"] = "";
+                    yourCookie.Values["Email"] = myUser.EMail;
+                    yourCookie.Expires = new DateTime(2023, 1, 1);
+                    Response.Cookies.Add(yourCookie);
                     Response.Redirect("Preferences.aspx");
                 }
                 else
@@ -59,9 +70,22 @@ namespace _3342_TermProject
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             User myUser = new User();
-            if (myUser.emailExists(myUser.EMail) == true)
+            myUser.EMail = txtEmail.Text;
+            myUser.Password = txtPassword.Text;
+
+            if (myUser.EMail == "")
             {
-                myUser.verifyUser(txtEmail.Text, txtPassword.Text);
+                lblLogIn.Text = "Please Enter a Valid Email Address";
+                lblLogIn.Visible = true;
+            }
+            else if (myUser.Password == "")
+            {
+                lblLogIn.Text = "Please Enter a Password";
+                lblLogIn.Visible = true;
+            }
+            else if (myUser.emailExists(myUser.EMail) == true)
+            {
+               myUser = myUser.verifyUser(txtEmail.Text, txtPassword.Text);
                 if (myUser.FirstName == "")
                 {
                     lblLogIn.Text = "Username and Password Combination in incorrect";
@@ -70,7 +94,7 @@ namespace _3342_TermProject
                 else
                 {
                     Session["myUser"] = myUser;
-                    Response.Redirect("");
+                    Response.Redirect("UserHomePage.aspx");
                 }
             }
             else
