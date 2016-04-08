@@ -1,4 +1,4 @@
-﻿<%@ Page MasterPageFile="~/Site1.Master" Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="3342_TermProject.styleTester" %>
+﻿<%@ Page MasterPageFile="~/Site1.Master" Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="_3342_TermProject.styleTester" %>
 <asp:Content ContentPlaceHolderId="ContentPlaceHolder1" runat="server">
     <!DOCTYPE html>
 

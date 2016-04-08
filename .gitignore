@@ -1,3 +1,7 @@
 *.suo
 *.dll
 *.pdb
+*.dll
+*.pdb
+*.suo
+*.dll
