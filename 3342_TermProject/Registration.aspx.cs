@@ -61,6 +61,8 @@ namespace _3342_TermProject
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             User myUser = new User();
+            myUser.EMail = txtEmail.Text;
+
             if (myUser.emailExists(myUser.EMail) == true)
             {
                 myUser.verifyUser(txtEmail.Text, txtPassword.Text);

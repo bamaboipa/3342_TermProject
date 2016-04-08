@@ -177,7 +177,7 @@ namespace TP_User
                 objCommand.CommandType = CommandType.StoredProcedure;
                 objCommand.CommandText = "GETUSERBYEMAIL";
 
-                objCommand.Parameters.AddWithValue("@Eamil", eMail);
+                objCommand.Parameters.AddWithValue("@EMail", eMail);
 
                 objDB.GetDataSetUsingCmdObj(objCommand);
                 objDB.CloseConnection();
