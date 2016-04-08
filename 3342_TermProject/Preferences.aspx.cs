@@ -33,9 +33,27 @@ namespace _3342_TermProject
 
         private void UpdateLoginPreferences()
         {
-            SqlCommand loginPrefCommand = new SqlCommand();
-            loginPrefCommand.CommandType = CommandType.StoredProcedure;
-            loginPrefCommand.CommandText = "";
+            DBConnect db = new DBConnect();
+            HttpCookie chocolateCookie = Request.Cookies["HoneyCookie"];
+            chocolateCookie.Values["Login"] = ddlLoginPreference.SelectedValue;
+            string email = chocolateCookie.Values["Email"].ToString();
+            SqlCommand privacyCommand = new SqlCommand();
+            privacyCommand.CommandType = CommandType.StoredProcedure;
+            privacyCommand.CommandText = "TP_UPDATEPRIVACY";
+            privacyCommand.Parameters.AddWithValue("@email", email);
+            privacyCommand.Parameters.AddWithValue("@imagePref", ddlPhotos.SelectedValue);
+            privacyCommand.Parameters.AddWithValue("@statusPref", ddlProfileInformation.SelectedValue);
+            privacyCommand.Parameters.AddWithValue("@personalPref", ddlContactInfo.SelectedValue);
+            db.DoUpdateUsingCmdObj(privacyCommand);
+            SqlCommand themeCommand = new SqlCommand();
+            themeCommand.CommandType = CommandType.StoredProcedure;
+            themeCommand.CommandText = "TP_UPDATETHEME";
+            themeCommand.Parameters.AddWithValue("@email", email);
+            themeCommand.Parameters.AddWithValue("@bannerColor", ddlTheme.SelectedValue);
+            themeCommand.Parameters.AddWithValue("@font", ddlFont.SelectedValue);
+            themeCommand.Parameters.AddWithValue("@fontColor", ddlFontColor.SelectedValue);
+            db.DoUpdateUsingCmdObj(themeCommand);
+            
         }
 
     }
