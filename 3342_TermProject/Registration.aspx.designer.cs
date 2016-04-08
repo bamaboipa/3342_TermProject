@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TermProject {
+namespace _3342_TermProject {
     
     
     public partial class styleTester {

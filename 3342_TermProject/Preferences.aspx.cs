@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using Utilities;
 using System.Data;
 
-namespace TermProject
+namespace _3342_TermProject
 {
     public partial class Preferences : System.Web.UI.Page
     {
