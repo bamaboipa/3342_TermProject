@@ -96,9 +96,7 @@ namespace TP_User
                 objCommand.Parameters.AddWithValue("@LastName", user.lastName);
                 objCommand.Parameters.AddWithValue("@Address", user.address);
                 objCommand.Parameters.AddWithValue("@Password", user.password);
-                objCommand.Parameters.AddWithValue("@ImagePreferenceId", user.imagePreferenceID);
-                objCommand.Parameters.AddWithValue("@StatusPreferenceId", user.statusPreferenceID);
-                objCommand.Parameters.AddWithValue("@ContactPreferenceID", user.personalPreferenceID);
+                objCommand.Parameters.AddWithValue("@Phone", user.phone);
 
                 objDB.DoUpdateUsingCmdObj(objCommand);
                 objDB.CloseConnection();
