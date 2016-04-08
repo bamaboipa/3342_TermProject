@@ -7,7 +7,8 @@ using Utilities;
 using System.Data;
 using System.Data.SqlClient;
 using TP_User;
-namespace TermProject
+
+namespace _3342_TermProject
 {
     public partial class styleTester : System.Web.UI.Page
     {
