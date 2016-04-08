@@ -59,12 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ContentPages.css" />
-<<<<<<< HEAD
+
     <Content Include="Preferences.aspx" />
-=======
-    <Content Include="Default.aspx" />
+
     <Content Include="PasswordRecover.aspx" />
->>>>>>> upstream/master
+
     <Content Include="Registration.aspx" />
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />

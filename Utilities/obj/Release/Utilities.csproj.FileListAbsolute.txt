@@ -1,4 +1,0 @@
-E:\CIS3342SP2016\RealEstate\Utilities\bin\Release\Utilities.dll
-E:\CIS3342SP2016\RealEstate\Utilities\bin\Release\Utilities.pdb
-E:\CIS3342SP2016\RealEstate\Utilities\obj\Release\Utilities.dll
-E:\CIS3342SP2016\RealEstate\Utilities\obj\Release\Utilities.pdb
