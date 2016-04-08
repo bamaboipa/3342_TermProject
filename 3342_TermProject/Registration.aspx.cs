@@ -62,8 +62,18 @@ namespace _3342_TermProject
         {
             User myUser = new User();
             myUser.EMail = txtEmail.Text;
-
-            if (myUser.emailExists(myUser.EMail) == true)
+            myUser.Password = txtPassword.Text;
+            if (myUser.EMail == "")
+            {
+                lblLogIn.Text = "Please Enter a Valid Email Address";
+                lblLogIn.Visible = true;
+            }
+            else if (myUser.Password == "")
+            {
+                lblLogIn.Text = "Please Enter a Password";
+                lblLogIn.Visible = true;
+            }
+            else if (myUser.emailExists(myUser.EMail) == true)
             {
                 myUser.verifyUser(txtEmail.Text, txtPassword.Text);
                 if (myUser.FirstName == "")

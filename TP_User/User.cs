@@ -127,22 +127,25 @@ namespace TP_User
             objCommand.Parameters.AddWithValue("@Password", password);
 
             DataSet dsUser = objDB.GetDataSetUsingCmdObj(objCommand);
-
-            foreach (DataRow row  in dsUser.Tables)
+         
+            foreach (DataTable  table   in dsUser.Tables)
             {
-                if (row["Email"].ToString().ToLower() == eMail.ToLower() && row["Password"].ToString() == Password)
+                foreach (DataRow row in table.Rows)
                 {
-                    myUser.eMail = eMail;
-                    myUser.firstName = row["FirstName"].ToString();
-                    myUser.lastName = row["LastName"].ToString();
-                    myUser.address = row["Address"].ToString();
-                    myUser.ImagePreferenceId = int.Parse(row["ImagePreferenceID"].ToString());
-                    myUser.statusPreferenceID = int.Parse(row["StatusPreferenceID"].ToString());
-                    myUser.personalPreferenceID = int.Parse(row["PersonalPreferenceID"].ToString());
-                }
-                else
-                {
-                    myUser.firstName = "";
+                    if (row["Email"].ToString().ToLower() == eMail.ToLower() && row["Password"].ToString() == Password)
+                    {
+                        myUser.eMail = eMail;
+                        myUser.firstName = row["FirstName"].ToString();
+                        myUser.lastName = row["LastName"].ToString();
+                        myUser.address = row["Address"].ToString();
+                        myUser.ImagePreferenceId = int.Parse(row["ImagePreferenceID"].ToString());
+                        myUser.statusPreferenceID = int.Parse(row["StatusPreferenceID"].ToString());
+                        myUser.personalPreferenceID = int.Parse(row["PersonalPreferenceID"].ToString());
+                    }
+                    else
+                    {
+                        myUser.firstName = "";
+                    }
                 }
             }
 
@@ -172,23 +175,30 @@ namespace TP_User
             SqlCommand objCommand = new SqlCommand();
 
             objCommand.Parameters.Clear();
-            try
-            {
-                objCommand.CommandType = CommandType.StoredProcedure;
+            
+            objCommand.CommandType = CommandType.StoredProcedure;
                 objCommand.CommandText = "GETUSERBYEMAIL";
 
                 objCommand.Parameters.AddWithValue("@EMail", eMail);
 
-                objDB.GetDataSetUsingCmdObj(objCommand);
+
+                DataSet dsEmail = objDB.GetDataSetUsingCmdObj(objCommand);
                 objDB.CloseConnection();
-
-                return true;
-            }
-            catch (Exception)
-            {
-
-                return false;
-            }
+                Boolean isEmail = false;
+                foreach (DataTable table in dsEmail.Tables)
+                {
+                    foreach (DataRow row in table.Rows)
+                    {
+                        if (row["Email"].ToString() == "")
+                        {
+                            isEmail = false;
+                        }
+                        else
+                        {
+                            isEmail = true;
+                        }
+                    }
+                } return isEmail;
            
         }
         public Boolean updatePassword(string password, string eMail)
