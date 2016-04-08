@@ -22,7 +22,7 @@ namespace TermProject
             string firstName = txtFirstName.Text;
             string lastName = txtLastName.Text;
             string address = txtAddress.Text;
-            string password = txtPassword.Text;
+            string password = txtNewAccountPassword.Text;
             string phone = txtPhoneNumber.Text;
 
             if (eMail == "" || firstName == "" || lastName == "" || address == "" || password == "" || phone == "")
@@ -44,7 +44,7 @@ namespace TermProject
                 if (myUser.addUser(myUser) == true)
                 {
                     Session["myUser"] = myUser;
-                    Response.Redirect("");
+                    Response.Redirect("Preferences.aspx");
                 }
                 else
                 {
@@ -58,18 +58,26 @@ namespace TermProject
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             User myUser = new User();
-
-            myUser.verifyUser(txtEmail.Text, txtPassword.Text);
-            if (myUser.FirstName == "")
+            if (myUser.emailExists(myUser.EMail) == true)
             {
-                lblLogIn.Text = "We cannot find you email, Please Register.";
-                lblLogIn.Visible = true;
+                myUser.verifyUser(txtEmail.Text, txtPassword.Text);
+                if (myUser.FirstName == "")
+                {
+                    lblLogIn.Text = "Username and Password Combination in incorrect";
+                    lblLogIn.Visible = true;
+                }
+                else
+                {
+                    Session["myUser"] = myUser;
+                    Response.Redirect("");
+                }
             }
             else
             {
-                Session["myUser"] = myUser;
-                Response.Redirect("");
+                lblLogIn.Text = "Opps, we can't seem to find your email.  Please Register!";
+                lblLogIn.Visible = true;
             }
+            
             
         }
 

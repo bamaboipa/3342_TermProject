@@ -80,8 +80,7 @@ namespace TP_User
         }
         public Boolean addUser(User user)
         { 
-            User myUser = new User();
-
+            
             DBConnect objDB = new DBConnect();
             SqlCommand objCommand = new SqlCommand();
             try 
@@ -92,9 +91,9 @@ namespace TP_User
                 objCommand.CommandType = CommandType.StoredProcedure;
                 objCommand.CommandText = "TP_ADDUSER";
 
-                objCommand.Parameters.AddWithValue("eMAIL", myUser.eMail);
-                objCommand.Parameters.AddWithValue("@FirstName", firstName);
-                objCommand.Parameters.AddWithValue("@LastName", lastName);
+                objCommand.Parameters.AddWithValue("eMAIL", user.eMail);
+                objCommand.Parameters.AddWithValue("@FirstName", user.firstName);
+                objCommand.Parameters.AddWithValue("@LastName", user.lastName);
                 objCommand.Parameters.AddWithValue("@Address", user.address);
                 objCommand.Parameters.AddWithValue("@Password", user.password);
                 objCommand.Parameters.AddWithValue("@ImagePreferenceId", user.imagePreferenceID);
@@ -169,7 +168,55 @@ namespace TP_User
 
             return dsSecurity;
         }
-       
+        public Boolean emailExists(string eMail)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+
+            objCommand.Parameters.Clear();
+            try
+            {
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "GETUSERBYEMAIL";
+
+                objCommand.Parameters.AddWithValue("@Eamil", eMail);
+
+                objDB.GetDataSetUsingCmdObj(objCommand);
+                objDB.CloseConnection();
+
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+           
+        }
+        public Boolean updatePassword(string password, string eMail)
+        {
+            DBConnect objDB = new DBConnect();
+            SqlCommand objCommand = new SqlCommand();
+            try
+            {
+                objCommand.Parameters.Clear();
+
+                objCommand.CommandType = CommandType.StoredProcedure;
+                objCommand.CommandText = "TP_UPDATEPASSWORD";
+
+                objCommand.Parameters.AddWithValue("@Email", eMail);
+                objCommand.Parameters.AddWithValue("@Password", password);
+
+                objDB.DoUpdateUsingCmdObj(objCommand);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+           
+        }
     }  
     
 }

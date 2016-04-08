@@ -61,6 +61,7 @@
     <Content Include="ContentPages.css" />
     <Content Include="Default.aspx" />
     <Content Include="PasswordRecover.aspx" />
+    <Content Include="Preferences.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -81,6 +82,12 @@
     </Compile>
     <Compile Include="PasswordRecover.aspx.designer.cs">
       <DependentUpon>PasswordRecover.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preferences.aspx.cs">
+      <DependentUpon>Preferences.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Preferences.aspx.designer.cs">
+      <DependentUpon>Preferences.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration.aspx.cs">

@@ -29,7 +29,7 @@ namespace _3342_TermProject
                 else
                 {
                     DataSet dsSecCheck = myUser.getSecQuestion(email);
-                    txtSecQuest.Text = dsSecCheck.Tables[0].Rows[count]["SecurityQuestion"].ToString();
+                    txtSecQuest.Text = dsSecCheck.Tables[0].Rows[count]["QuestionText"].ToString();
                     divQuestion.Visible = true;
                 }
             }
@@ -39,26 +39,22 @@ namespace _3342_TermProject
 
         protected void btnGetPassword_Click(object sender, EventArgs e)
         {
-            int count = (int)Session["count"];
+           
+            User myUser = new User();
+            string password = txtUpdatePass.Text;
             string email = (string)Session["email"];
-            DataSet dsSecQuest = (DataSet)Session["dsSecQuest"];
-            if (count < dsSecQuest.Tables[0].Rows.Count && txtSecAnswer.Text == dsSecQuest.Tables[0].Rows[count]["SecAnswer"].ToString())
+
+            if (myUser.updatePassword(password, email )== true)
             {
-                
-                    divQuestion.Visible = false;
-                    divPassword.Visible = true;
-            }
-            else if (count < dsSecQuest.Tables[0].Rows.Count && txtSecAnswer.Text != dsSecQuest.Tables[0].Rows[count]["SecAnswer"].ToString())
-            {
-                count++;
+                lblResponsePass.Text = "Password Updated.";
+                lblResponsePass.Visible = true;
+                Response.AddHeader("Refresh", "5;URL=Registration.aspx");
             }
             else
             {
-                lblResponseQuestion.Text = "You have exhausted your attempts, account is locked!";
-                lblResponseQuestion.Visible = true;
-                Response.AddHeader("Refresh", "5;URL=Registration.aspx");
+                lblResponsePass.Text = "Well this is embarassing, update failed";
+                lblResponsePass.Visible = true;
             }
-            
 
         }
 
@@ -80,8 +76,31 @@ namespace _3342_TermProject
                 divEmail.Visible = false;
                 string email = dsSecQuest.Tables[0].Rows[count]["Email"].ToString();
                 Session["email"] = email;
-                txtSecQuest.Text = dsSecQuest.Tables[0].Rows[count]["SecurityQuestion"].ToString();
+                txtSecQuest.Text = dsSecQuest.Tables[0].Rows[count]["QuestionText"].ToString();
                 divQuestion.Visible = true;
+            }
+        }
+
+        protected void btnAnswer_Click(object sender, EventArgs e)
+        {
+            int count = (int)Session["count"];
+            string email = (string)Session["email"];
+            DataSet dsSecQuest = (DataSet)Session["dsSecQuest"];
+            if (count < dsSecQuest.Tables[0].Rows.Count && txtSecAnswer.Text == dsSecQuest.Tables[0].Rows[count]["QuestionAnswer"].ToString())
+            {
+
+                divQuestion.Visible = false;
+                divPassword.Visible = true;
+            }
+            else if (count < dsSecQuest.Tables[0].Rows.Count && txtSecAnswer.Text != dsSecQuest.Tables[0].Rows[count]["QuestionAnswer"].ToString())
+            {
+                count++;
+            }
+            else
+            {
+                lblResponseQuestion.Text = "You have exhausted your attempts, account is locked!";
+                lblResponseQuestion.Visible = true;
+                Response.AddHeader("Refresh", "5;URL=Registration.aspx");
             }
         }
     }

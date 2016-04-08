@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
+    <link rel="stylesheet" type="text/css" href="ContentPages.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -19,7 +20,7 @@
             <asp:Label ID="lblResponseQuestion" runat="server" Visible="false"></asp:Label>
             <br />
             <br />
-            <asp:Button ID="btnUpdate" runat="server" Text="Update Password" />
+            <asp:Button ID="btnAnswer" runat="server" Text="Submit" OnClick="btnAnswer_Click" />
             <br />
         </div>
         <div id="divEmail" class="siteInfo" aria-atomic="true" style="text-align:center" runat="server" visible="false">
