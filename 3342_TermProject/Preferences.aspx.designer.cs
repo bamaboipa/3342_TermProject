@@ -94,6 +94,15 @@ namespace _3342_TermProject {
         protected global::System.Web.UI.WebControls.DropDownList ddlFontColor;
         
         /// <summary>
+        /// lblMothersName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMothersName;
+        
+        /// <summary>
         /// txtMaidenName control.
         /// </summary>
         /// <remarks>
@@ -103,6 +112,15 @@ namespace _3342_TermProject {
         protected global::System.Web.UI.WebControls.TextBox txtMaidenName;
         
         /// <summary>
+        /// lblFathersMiddle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFathersMiddle;
+        
+        /// <summary>
         /// txtFathersMiddle control.
         /// </summary>
         /// <remarks>
@@ -110,6 +128,15 @@ namespace _3342_TermProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFathersMiddle;
+        
+        /// <summary>
+        /// lblStreet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStreet;
         
         /// <summary>
         /// txtStreet control.

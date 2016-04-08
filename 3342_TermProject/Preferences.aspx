@@ -88,19 +88,19 @@
     <span style="font-weight: bold;">Set Your Security Questions</span>
     <br />
     <br />
-    <span>What Is Your Mother's Maiden Name?</span>
+    <asp:Label ID="lblMothersName" runat="server" Text="What Is Your Mother's Maiden Name?"></asp:Label>
         <asp:TextBox CssClass="dropdown" ID="txtMaidenName" runat="server"></asp:TextBox>
     <br />
     <br />
-    <span>What Is Your Father's Middle Name?</span>
+    <asp:Label ID="lblFathersMiddle" runat="server" Text="What Is Your Father's Middle Name?"></asp:Label>
     <asp:TextBox CssClass="dropdown" ID="txtFathersMiddle" runat="server"></asp:TextBox>
         <br />
         <br />
-    <span>What Street Did You Grow Up On?</span>
+    <asp:Label ID="lblStreet" runat="server" Text="What Street Did You Grow Up On?"></asp:Label>
     <asp:TextBox CssClass="dropdown" ID="txtStreet" runat="server"></asp:TextBox>
         <br />
         <br />
-    <asp:Button ID="btnSetSecurity" CssClass="button" runat="server" Text="Update/Set Security Questions" />
+    <asp:Button ID="btnSetSecurity" CssClass="button" runat="server" Text="Update/Set Security Questions" OnClick="btnSetSecurity_Click" />
     </div>
     <asp:Button ID="btnApply" runat="server" CssClass="button preferenceApplyButton" Text="Apply Changes" OnClick="btnApply_Click" />
     </div>
