@@ -20,8 +20,8 @@
     <asp:Label CssClass="errorPreferences" ID="error" runat="server"></asp:Label>
     <span style="font-weight:bold;">Login Preferences: </span>
     <asp:DropDownList CssClass="dropdown" ID="ddlLoginPreference" runat="server">
-        <asp:ListItem Value="Auto Login">Auto Login</asp:ListItem>
-        <asp:ListItem Value="Fast Login">Fast Login</asp:ListItem>
+        <asp:ListItem Value="Auto">Auto Login</asp:ListItem>
+        <asp:ListItem Value="Fast">Fast Login</asp:ListItem>
         <asp:ListItem Value="Manual">Manual Login</asp:ListItem>
     </asp:DropDownList>
     <br />

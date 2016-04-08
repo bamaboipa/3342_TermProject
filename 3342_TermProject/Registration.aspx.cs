@@ -44,9 +44,18 @@ namespace _3342_TermProject
 
                 if (myUser.addUser(myUser) == true)
                 {
+                    DBConnect db = new DBConnect();
+                    SqlCommand addToPreferences = new SqlCommand();
+                    addToPreferences.CommandType = CommandType.StoredProcedure;
+                    addToPreferences.CommandText = "TP_ADDUSERTOPREFERENCES";
+                    addToPreferences.Parameters.AddWithValue("@email", myUser.EMail);
+                    db.DoUpdateUsingCmdObj(addToPreferences);
                     Session["myUser"] = myUser;
                     HttpCookie yourCookie = new HttpCookie("HoneyCookie");
-                    //yourCookie.Value["Login"];
+                    yourCookie.Values["Login"] = "";
+                    yourCookie.Values["Email"] = myUser.EMail;
+                    yourCookie.Expires = new DateTime(2023, 1, 1);
+                    Response.Cookies.Add(yourCookie);
                     Response.Redirect("Preferences.aspx");
                 }
                 else
@@ -62,6 +71,7 @@ namespace _3342_TermProject
         {
             User myUser = new User();
             myUser.EMail = txtEmail.Text;
+            myUser.Password = txtPassword.Text;
 
             if (myUser.emailExists(myUser.EMail) == true)
             {
