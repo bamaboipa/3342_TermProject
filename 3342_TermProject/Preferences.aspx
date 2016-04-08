@@ -1,4 +1,4 @@
-﻿<%@ Page MasterPageFile="~/Site1.Master" Language="C#" AutoEventWireup="true" CodeBehind="Preferences.aspx.cs" Inherits="TermProject.Preferences" %>
+﻿<%@ Page MasterPageFile="~/Site1.Master" Language="C#" AutoEventWireup="true" CodeBehind="Preferences.aspx.cs" Inherits="3342_TermProject.Preferences" %>
 <asp:Content ContentPlaceHolderId="ContentPlaceHolder1" runat="server">
 
 <!DOCTYPE html>
@@ -20,7 +20,6 @@
     <asp:Label CssClass="errorPreferences" ID="error" runat="server"></asp:Label>
     <span style="font-weight:bold;">Login Preferences: </span>
     <asp:DropDownList CssClass="dropdown" ID="ddlLoginPreference" runat="server">
-        <asp:ListItem Value=""></asp:ListItem>
         <asp:ListItem Value="Auto Login">Auto Login</asp:ListItem>
         <asp:ListItem Value="Fast Login">Fast Login</asp:ListItem>
         <asp:ListItem Value="Manual">Manual Login</asp:ListItem>
@@ -36,25 +35,25 @@
         <br />
     <span>Photos: </span>
     <asp:DropDownList CssClass="dropdown" ID="ddlPhotos" runat="server">
-        <asp:ListItem Value="Public">Public</asp:ListItem>
-        <asp:ListItem Value="Friends">Friends Only</asp:ListItem>
-        <asp:ListItem Value="Friends Of Friends">Friends Of Friends</asp:ListItem>
+        <asp:ListItem Value="1">Public</asp:ListItem>
+        <asp:ListItem Value="2">Friends Only</asp:ListItem>
+        <asp:ListItem Value="5">Friends Of Friends</asp:ListItem>
     </asp:DropDownList>
     <br />
     <br />
     <span>Profile Information: </span>
     <asp:DropDownList CssClass="dropdown" ID="ddlProfileInformation" runat="server">
-        <asp:ListItem Value="Public">Public</asp:ListItem>
-        <asp:ListItem Value="Friends">Friends Only</asp:ListItem>
-        <asp:ListItem Value="Friends Of Friends">Friends Of Friends</asp:ListItem>
+        <asp:ListItem Value="1">Public</asp:ListItem>
+        <asp:ListItem Value="2">Friends Only</asp:ListItem>
+        <asp:ListItem Value="5">Friends Of Friends</asp:ListItem>
     </asp:DropDownList>
     <br />
         <br />
     <span>Contact Information: </span>
     <asp:DropDownList CssClass="dropdown" ID="ddlContactInfo" runat="server">
-        <asp:ListItem Value="Public">Public</asp:ListItem>
-        <asp:ListItem Value="Friends">Friends Only</asp:ListItem>
-        <asp:ListItem Value="Friends Of Friends">Friends Of Friends</asp:ListItem>
+        <asp:ListItem Value="1">Public</asp:ListItem>
+        <asp:ListItem Value="2">Friends Only</asp:ListItem>
+        <asp:ListItem Value="5">Friends Of Friends</asp:ListItem>
     </asp:DropDownList>
         <br />
         <br />

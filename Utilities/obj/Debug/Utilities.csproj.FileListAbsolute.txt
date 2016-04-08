@@ -17,4 +17,12 @@ E:\3342_TermProject\Utilities\bin\Debug\Utilities.dll
 E:\3342_TermProject\Utilities\bin\Debug\Utilities.pdb
 E:\3342_TermProject\Utilities\obj\Debug\Utilities.dll
 E:\3342_TermProject\Utilities\obj\Debug\Utilities.pdb
+<<<<<<< HEAD
 E:\3342_TermProject\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+=======
+C:\Users\Melissa\Desktop\3342_TermProject\Utilities\bin\Debug\Utilities.dll
+C:\Users\Melissa\Desktop\3342_TermProject\Utilities\bin\Debug\Utilities.pdb
+C:\Users\Melissa\Desktop\3342_TermProject\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+C:\Users\Melissa\Desktop\3342_TermProject\Utilities\obj\Debug\Utilities.dll
+C:\Users\Melissa\Desktop\3342_TermProject\Utilities\obj\Debug\Utilities.pdb
+>>>>>>> upstream/master

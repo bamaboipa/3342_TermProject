@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace TermProject
+namespace _3342_TermProject
 {
     public partial class Site1 : System.Web.UI.MasterPage
     {

@@ -19,6 +19,7 @@
     border-bottom-left-radius: 50px;
     border-top-right-radius: 50px;
     background-color: #481883;
+    background-image: url("Honeycomb.png");
     height: 40px;
     color: white;
     padding-right: 10px;
@@ -30,10 +31,19 @@
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
     background-color: #481883;
+    background-image: url("Honeycomb.png");
     height: 40px;
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 10px;
+}
+
+.bee {
+    height: 45px;
+    width: 45px;
+    position: relative;
+    left: 45px;
+    bottom: 5px;
 }
 
 .login {
