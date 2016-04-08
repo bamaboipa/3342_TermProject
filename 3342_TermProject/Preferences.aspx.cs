@@ -53,7 +53,23 @@ namespace _3342_TermProject
             themeCommand.Parameters.AddWithValue("@font", ddlFont.SelectedValue);
             themeCommand.Parameters.AddWithValue("@fontColor", ddlFontColor.SelectedValue);
             db.DoUpdateUsingCmdObj(themeCommand);
-            
+            Response.Redirect("UserHomePage.aspx");
+        }
+
+        protected void btnSetSecurity_Click(object sender, EventArgs e)
+        {
+            DBConnect db = new DBConnect();
+            HttpCookie chocolateCookie = Request.Cookies["HoneyCookie"];
+            chocolateCookie.Values["Login"] = ddlLoginPreference.SelectedValue;
+            string email = chocolateCookie.Values["Email"].ToString();
+            if (txtFathersMiddle.Text != "" && txtMaidenName.Text != "" && txtStreet.Text != "")
+            {
+                SqlCommand secQuestionsCommand = new SqlCommand();
+                secQuestionsCommand.CommandType = CommandType.StoredProcedure;
+                secQuestionsCommand.CommandText = "TP_ADDSECQUESTION";
+                secQuestionsCommand.Parameters.AddWithValue("@Email", email);
+                secQuestionsCommand.Parameters.AddWithValue("@Question", email);//TODO not email
+            }
         }
 
     }
