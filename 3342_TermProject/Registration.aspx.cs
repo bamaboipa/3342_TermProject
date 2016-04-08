@@ -73,7 +73,17 @@ namespace _3342_TermProject
             myUser.EMail = txtEmail.Text;
             myUser.Password = txtPassword.Text;
 
-            if (myUser.emailExists(myUser.EMail) == true)
+            if (myUser.EMail == "")
+            {
+                lblLogIn.Text = "Please Enter a Valid Email Address";
+                lblLogIn.Visible = true;
+            }
+            else if (myUser.Password == "")
+            {
+                lblLogIn.Text = "Please Enter a Password";
+                lblLogIn.Visible = true;
+            }
+            else if (myUser.emailExists(myUser.EMail) == true)
             {
                 myUser.verifyUser(txtEmail.Text, txtPassword.Text);
                 if (myUser.FirstName == "")
