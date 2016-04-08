@@ -1,4 +1,4 @@
-﻿<%@ Page MasterPageFile="~/Site1.Master" Language="C#" AutoEventWireup="true" CodeBehind="Preferences.aspx.cs" Inherits="3342_TermProject.Preferences" %>
+﻿<%@ Page MasterPageFile="~/Site1.Master" Language="C#" AutoEventWireup="true" CodeBehind="Preferences.aspx.cs" Inherits="_3342_TermProject.Preferences" %>
 <asp:Content ContentPlaceHolderId="ContentPlaceHolder1" runat="server">
 
 <!DOCTYPE html>

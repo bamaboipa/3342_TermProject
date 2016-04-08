@@ -45,6 +45,8 @@ namespace _3342_TermProject
                 if (myUser.addUser(myUser) == true)
                 {
                     Session["myUser"] = myUser;
+                    HttpCookie yourCookie = new HttpCookie("HoneyCookie");
+                    //yourCookie.Value["Login"];
                     Response.Redirect("Preferences.aspx");
                 }
                 else
