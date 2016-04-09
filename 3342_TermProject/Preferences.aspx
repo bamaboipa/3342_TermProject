@@ -100,7 +100,7 @@
     <asp:TextBox CssClass="dropdown" ID="txtStreet" runat="server"></asp:TextBox>
         <br />
         <br />
-    <asp:Button ID="btnSetSecurity" CssClass="button" runat="server" Text="Update/Set Security Questions" OnClick="btnSetSecurity_Click" />
+    <asp:Button ID="btnSetSecurity" CssClass="button" runat="server" Text="Set Security Questions" OnClick="btnSetSecurity_Click" />
     </div>
     <asp:Button ID="btnApply" runat="server" CssClass="button preferenceApplyButton" Text="Apply Changes" OnClick="btnApply_Click" />
     </div>
