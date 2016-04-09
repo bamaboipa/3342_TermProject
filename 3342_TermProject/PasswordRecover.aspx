@@ -10,8 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div id="divQuestion" class="siteInfo" aria-atomic="true" style="text-align: center" runat="server" visible="false">
-
-            <asp:TextBox ID="txtSecQuest" runat="server" ReadOnly="True"></asp:TextBox>
+            <asp:Label ID="lblSecQuest" runat="server" ></asp:Label>
             <br />
             <br />
             <asp:TextBox ID="txtSecAnswer" runat="server"></asp:TextBox>
