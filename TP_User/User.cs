@@ -6,11 +6,19 @@ using System.Web;
 using Utilities;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.IO;
+using System.Text;
+using System.Net;
+
 
 namespace TP_User
 {
     public class User
     {
+        private Byte[] key = { 251, 102, 19, 77, 46, 136, 207, 119, 5, 172, 4, 169, 203, 242, 38, 199 };
+        private Byte[] vector = {145, 63, 190, 110, 22, 2, 112, 118, 230, 120, 251, 112, 78, 31, 113, 155};
+
         private int userID, imagePreferenceID, statusPreferenceID, personalPreferenceID;
         private string eMail, firstName, lastName, address, city, state, password, zip, phone;
 
@@ -156,9 +164,6 @@ namespace TP_User
                     }
                 } return myUser;
             }
-
-            
-        
         public DataSet getSecQuestion(string eMail)
         {
             DBConnect objDB = new DBConnect();
@@ -232,6 +237,55 @@ namespace TP_User
                 return false;
             }
            
+        }
+        public String encryptPassword(string password)
+        {
+            string encPassword;
+            
+            Encoding encoder = new UTF32Encoding();
+            byte[] arrTextBytes;
+
+            arrTextBytes = encoder.GetBytes(password);
+
+            RijndaelManaged myEncrypt = new RijndaelManaged();
+            MemoryStream myMemStream = new MemoryStream();
+            CryptoStream myEncryptStream = new CryptoStream(myMemStream, myEncrypt.CreateEncryptor(key, vector), CryptoStreamMode.Write);
+
+            myEncryptStream.Write(arrTextBytes, 0, arrTextBytes.Length);
+            myEncryptStream.FlushFinalBlock();
+
+            myMemStream.Position = 0;
+            Byte[] arrEncByte = new Byte[myMemStream.Length];
+            myMemStream.Read(arrEncByte, 0, arrEncByte.Length);
+
+            myEncryptStream.Close();
+            myMemStream.Close();
+
+            encPassword = Convert.ToBase64String(arrEncByte);
+            return encPassword;
+
+        }
+        public string decryptPassword(string encPassword)
+        {
+            Byte[] arrEncPassword = Convert.FromBase64String(encPassword);
+            Byte[] arrTExtBytes;
+            string password;
+            UTF32Encoding encoder = new UTF32Encoding();
+
+            RijndaelManaged myEncrypt = new RijndaelManaged();
+            MemoryStream myMemStream = new MemoryStream();
+            CryptoStream myDecStream = new CryptoStream(myMemStream, myEncrypt.CreateDecryptor(key, vector), CryptoStreamMode.Write);
+
+            myDecStream.Write(arrEncPassword, 0, arrEncPassword.Length);
+            myDecStream.FlushFinalBlock();
+
+            myMemStream.Position = 0;
+            arrTExtBytes = new Byte[myMemStream.Length];
+            myMemStream.Read(arrTExtBytes, 0, arrTExtBytes.Length);
+
+            password = encoder.GetString(arrTExtBytes);
+
+            return password;
         }
     }  
     
