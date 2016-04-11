@@ -13,5 +13,11 @@ namespace _3342_TermProject
         {
 
         }
+
+        protected void btnLogout_ServerClick1(object sender, System.EventArgs e)
+        {
+            HttpCookie cook = Request.Cookies["Honey Cookie"];
+            int i = 0;
+        }
     }
 }
