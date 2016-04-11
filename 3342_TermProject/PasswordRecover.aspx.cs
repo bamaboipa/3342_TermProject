@@ -29,7 +29,7 @@ namespace _3342_TermProject
                 else
                 {
                     DataSet dsSecCheck = myUser.getSecQuestion(email);
-                    txtSecQuest.Text = dsSecCheck.Tables[0].Rows[count]["QuestionText"].ToString();
+                    lblSecQuest.Text = dsSecCheck.Tables[0].Rows[count]["QuestionText"].ToString();
                     divQuestion.Visible = true;
                 }
             }
@@ -76,17 +76,18 @@ namespace _3342_TermProject
                 divEmail.Visible = false;
                 string email = dsSecQuest.Tables[0].Rows[count]["Email"].ToString();
                 Session["email"] = email;
-                txtSecQuest.Text = dsSecQuest.Tables[0].Rows[count]["QuestionText"].ToString();
+                lblSecQuest.Text = dsSecQuest.Tables[0].Rows[count]["QuestionText"].ToString();
                 divQuestion.Visible = true;
             }
         }
 
         protected void btnAnswer_Click(object sender, EventArgs e)
         {
-            int count = (int)Session["count"];
+            User myUser = new User();
+            int count = 0;
             string email = (string)Session["email"];
-            DataSet dsSecQuest = (DataSet)Session["dsSecQuest"];
-            if (count < dsSecQuest.Tables[0].Rows.Count && txtSecAnswer.Text == dsSecQuest.Tables[0].Rows[count]["QuestionAnswer"].ToString())
+            DataSet dsSecQuest = myUser.getSecQuestion(email);
+            if (count < dsSecQuest.Tables[0].Rows.Count && txtSecAnswer.Text == dsSecQuest.Tables[0].Rows[count][3].ToString())
             {
 
                 divQuestion.Visible = false;
@@ -95,6 +96,8 @@ namespace _3342_TermProject
             else if (count < dsSecQuest.Tables[0].Rows.Count && txtSecAnswer.Text != dsSecQuest.Tables[0].Rows[count]["QuestionAnswer"].ToString())
             {
                 count++;
+                txtSecAnswer.Text = "";
+                lblSecQuest.Text = dsSecQuest.Tables[0].Rows[count]["QuestionText"].ToString();
             }
             else
             {
