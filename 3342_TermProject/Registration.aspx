@@ -78,11 +78,11 @@
                 </tr>
                 <tr>
                     <td><asp:TextBox CssClass="textbox" ID="txtEmail" runat="server"></asp:TextBox></td>
-                    <td><asp:TextBox CssClass="textbox" ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox></td>
+                    <td><asp:TextBox CssClass="textbox" ID="txtPassword" runat="server" TextMode="Password" OnTextChanged="txtPassword_TextChanged"></asp:TextBox></td>
                     <td><asp:Button ID="btnLogin" CssClass="loginButton" runat="server" Text="Login" OnClientClick="ValidateUser" OnClick="btnLogin_Click"/></td>
                 </tr>
                 <tr>
-                    <td><asp:CheckBox ID="chkStayLoggedIn" runat="server" Text="Keep Me Logged In!"  /></td>
+                    <td><asp:CheckBox ID="chkStayLoggedIn" runat="server" Text="Keep Me Logged In!" OnCheckedChanged="chkStayLoggedIn_CheckedChanged"  /></td>
                     <td>
                         <asp:LinkButton ID="btnRecoverPassword" runat="server" OnClick="btnRecoverPassword_Click">Forgot Your Password?</asp:LinkButton>
                      

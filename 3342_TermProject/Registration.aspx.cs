@@ -7,6 +7,7 @@ using Utilities;
 using System.Data;
 using System.Data.SqlClient;
 using TP_User;
+using System.Web.Security;
 
 namespace _3342_TermProject
 {
@@ -14,7 +15,35 @@ namespace _3342_TermProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (!IsPostBack && Request.Cookies["HoneyCookie"] != null)
+                {
+                    User myUser = new User();
+                    HttpCookie myCookie = Request.Cookies["HoneyCookie"];
+                    string logIn = myCookie.Values["LogIn"];
+                    myUser.EMail = myCookie.Values["Email"];
+                    myUser.Password = myUser.decryptPassword(myCookie.Values["Password"]);
+                    if (myUser.EMail != "" && myUser.Password != "" )
+	                {
+		                     myUser = myUser.verifyUser(txtEmail.Text, txtPassword.Text);
+                             Session["myUser"] = myUser;
+                             Response.Redirect("UserHomePage.aspx");
 
+                    }
+                    else if (myUser.EMail != "" && myUser.Password == "")
+                    {
+                        txtEmail.Text = myUser.EMail;
+
+                    }
+                    else
+                    {
+                        txtEmail.Text = "";
+                        txtPassword.Text = "";
+                    }
+                }
+                chkStayLoggedIn.Visible = false;
+            }
         }
 
         protected void btnCreateAccount_Click(object sender, EventArgs e)
@@ -52,8 +81,9 @@ namespace _3342_TermProject
                     db.DoUpdateUsingCmdObj(addToPreferences);
                     Session["myUser"] = myUser;
                     HttpCookie yourCookie = new HttpCookie("HoneyCookie");
-                    yourCookie.Values["Login"] = "";
+                    yourCookie.Values["LogIn"] = "";
                     yourCookie.Values["Email"] = myUser.EMail;
+                    yourCookie.Values["Password"] = "";
                     yourCookie.Expires = new DateTime(2023, 1, 1);
                     Response.Cookies.Add(yourCookie);
                     Response.Redirect("Preferences.aspx");
@@ -111,6 +141,53 @@ namespace _3342_TermProject
             string email = txtEmail.Text;
             Session["email"] = email;
             Response.Redirect("PasswordRecover.aspx");
+        }
+
+        protected void chkStayLoggedIn_CheckedChanged(object sender, EventArgs e)
+        {
+            User myUser = new User();
+            myUser.EMail = txtEmail.Text;
+            myUser.Password = txtPassword.Text;
+
+            if (myUser.EMail == "")
+            {
+                lblLogIn.Text = "Please Enter a Valid Email Address";
+                lblLogIn.Visible = true;
+            }
+            else if (myUser.Password == "")
+            {
+                lblLogIn.Text = "Please Enter a Password";
+                lblLogIn.Visible = true;
+            }
+            else if (myUser.emailExists(myUser.EMail) == true)
+            {
+                myUser = myUser.verifyUser(txtEmail.Text, txtPassword.Text);
+                if (myUser.FirstName == "")
+                {
+                    lblLogIn.Text = "Username and Password Combination in incorrect";
+                    lblLogIn.Visible = true;
+                }
+                else
+                {
+                    string encPassword = myUser.encryptPassword(txtPassword.Text);
+
+                    HttpCookie yourCookie = new HttpCookie("HoneyCookie");
+                    yourCookie.Values["LogIn"] = "Auto";
+                    yourCookie.Values["Email"] = myUser.EMail;
+                    yourCookie.Values["Password"] = encPassword;
+                    yourCookie.Expires = new DateTime(2023, 1, 1);
+                    Response.Cookies.Add(yourCookie);
+
+                    Session["myUser"] = myUser;
+                    Response.Redirect("UserHomePage.aspx");
+                }
+
+            }
+        }
+
+        protected void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            chkStayLoggedIn.Visible = true;
         }
       
         
