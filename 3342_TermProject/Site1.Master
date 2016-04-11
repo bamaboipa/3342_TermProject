@@ -9,6 +9,10 @@
         <div class="navBar">
             <span style="font-size:35px; font-weight:bold; position:relative; left: 35px; bottom: 10px;">Bee Social</span>
             <img class="bee" src="bee.png" />
+            <a href="Preferences.aspx"><img class="settings" src="gearWhite.png"/></a>
+            <a href="UserHomePage.aspx"><img class="home" src="homeIcon.png"/></a>
+            <%--<input type="submit" id="btnLogout" value="submit" runat="server" onserverclick="btnLogout_ServerClick1"/>--%>
+            <%--<asp:ImageButton CssClass="logout" ID="imgLogout" ImageUrl="~/logout.png" runat="server" OnClick="imgLogout_Click"/>--%>
         </div>
         <div class="content">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

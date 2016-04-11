@@ -60,7 +60,10 @@
   <ItemGroup>
     <Content Include="bee.png" />
     <Content Include="ContentPages.css" />
+    <Content Include="gearWhite.png" />
+    <Content Include="homeIcon.png" />
     <Content Include="Honeycomb.png" />
+    <Content Include="logout.png" />
     <Content Include="Preferences.aspx" />
     <Content Include="PasswordRecover.aspx" />
     <Content Include="Registration.aspx" />
