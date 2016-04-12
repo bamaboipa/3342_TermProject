@@ -1,28 +1,4 @@
-D:\CIS3342SP2016\RealEstate\Utilities\bin\Debug\Utilities.dll
-D:\CIS3342SP2016\RealEstate\Utilities\bin\Debug\Utilities.pdb
-D:\CIS3342SP2016\RealEstate\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
-D:\CIS3342SP2016\RealEstate\Utilities\obj\Debug\Utilities.dll
-D:\CIS3342SP2016\RealEstate\Utilities\obj\Debug\Utilities.pdb
-E:\CIS3342SP2016\RealEstate\Utilities\bin\Debug\Utilities.dll
-E:\CIS3342SP2016\RealEstate\Utilities\bin\Debug\Utilities.pdb
-E:\CIS3342SP2016\RealEstate\Utilities\obj\Debug\Utilities.dll
-E:\CIS3342SP2016\RealEstate\Utilities\obj\Debug\Utilities.pdb
-D:\3342_TermProject\Utilities\bin\Debug\Utilities.dll
-D:\3342_TermProject\Utilities\bin\Debug\Utilities.pdb
-D:\3342_TermProject\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
-D:\3342_TermProject\Utilities\obj\Debug\Utilities.dll
-D:\3342_TermProject\Utilities\obj\Debug\Utilities.pdb
-\Debug\Utilities.pdb
-E:\3342_TermProject\Utilities\bin\Debug\Utilities.dll
-E:\3342_TermProject\Utilities\bin\Debug\Utilities.pdb
-E:\3342_TermProject\Utilities\obj\Debug\Utilities.dll
-E:\3342_TermProject\Utilities\obj\Debug\Utilities.pdb
-<<<<<<< HEAD
-E:\3342_TermProject\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
-=======
-C:\Users\Melissa\Desktop\3342_TermProject\Utilities\bin\Debug\Utilities.dll
-C:\Users\Melissa\Desktop\3342_TermProject\Utilities\bin\Debug\Utilities.pdb
-C:\Users\Melissa\Desktop\3342_TermProject\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
-C:\Users\Melissa\Desktop\3342_TermProject\Utilities\obj\Debug\Utilities.dll
-C:\Users\Melissa\Desktop\3342_TermProject\Utilities\obj\Debug\Utilities.pdb
->>>>>>> upstream/master
+C:\Users\tuf30050\Documents\GitHub\3342_TermProject\Utilities\bin\Debug\Utilities.dll
+C:\Users\tuf30050\Documents\GitHub\3342_TermProject\Utilities\bin\Debug\Utilities.pdb
+C:\Users\tuf30050\Documents\GitHub\3342_TermProject\Utilities\obj\Debug\Utilities.dll
+C:\Users\tuf30050\Documents\GitHub\3342_TermProject\Utilities\obj\Debug\Utilities.pdb
