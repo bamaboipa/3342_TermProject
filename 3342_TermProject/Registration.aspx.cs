@@ -23,7 +23,7 @@ namespace _3342_TermProject
                     HttpCookie myCookie = Request.Cookies["HoneyCookie"];
                     string logIn = myCookie.Values["LogIn"];
                     myUser.EMail = myCookie.Values["Email"];
-                    myUser.Password = myUser.decryptPassword(myCookie.Values["Password"]);
+                    myUser.Password = myUser.encryptPassword(myCookie.Values["Password"]);
                     if (myUser.EMail != "" && myUser.Password != "" )
 	                {
 		                     myUser = myUser.verifyUser(txtEmail.Text, txtPassword.Text);
