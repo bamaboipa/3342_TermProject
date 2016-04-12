@@ -118,6 +118,26 @@
     height: 725px;
 }
 
+.home {
+    position: absolute;
+    right: 150px;
+    height: 45px;
+    width: 45px;
+}
+
+.settings {
+    position:absolute;
+    right: 220px;
+    height: 50px;
+    width: 50px;
+}
+
+.logout {
+    position: absolute;
+    right: 60px;
+    height: 45px;
+}
+
 .errorPreferences {
     color: red;
     position: relative;

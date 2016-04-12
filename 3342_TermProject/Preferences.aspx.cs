@@ -58,17 +58,40 @@ namespace _3342_TermProject
 
         protected void btnSetSecurity_Click(object sender, EventArgs e)
         {
-            DBConnect db = new DBConnect();
+            
             HttpCookie chocolateCookie = Request.Cookies["HoneyCookie"];
             chocolateCookie.Values["Login"] = ddlLoginPreference.SelectedValue;
             string email = chocolateCookie.Values["Email"].ToString();
             if (txtFathersMiddle.Text != "" && txtMaidenName.Text != "" && txtStreet.Text != "")
             {
+                DBConnect db = new DBConnect();
                 SqlCommand secQuestionsCommand = new SqlCommand();
                 secQuestionsCommand.CommandType = CommandType.StoredProcedure;
                 secQuestionsCommand.CommandText = "TP_ADDSECQUESTION";
                 secQuestionsCommand.Parameters.AddWithValue("@Email", email);
-                secQuestionsCommand.Parameters.AddWithValue("@Question", email);//TODO not email
+                secQuestionsCommand.Parameters.AddWithValue("@Question", lblMothersName.Text);
+                secQuestionsCommand.Parameters.AddWithValue("@Answer", txtMaidenName.Text);
+                db.DoUpdateUsingCmdObj(secQuestionsCommand);
+                SqlCommand secQuestionsCommand2 = new SqlCommand();
+                secQuestionsCommand2.CommandType = CommandType.StoredProcedure;
+                secQuestionsCommand2.CommandText = "TP_ADDSECQUESTION";
+                secQuestionsCommand2.Parameters.AddWithValue("@Email", email);
+                secQuestionsCommand2.Parameters.AddWithValue("@Question", lblFathersMiddle.Text);
+                secQuestionsCommand2.Parameters.AddWithValue("@Answer", txtFathersMiddle.Text);
+                db.DoUpdateUsingCmdObj(secQuestionsCommand2);
+                SqlCommand secQuestionsCommand3 = new SqlCommand();
+                secQuestionsCommand3.CommandType = CommandType.StoredProcedure;
+                secQuestionsCommand3.CommandText = "TP_ADDSECQUESTION";
+                secQuestionsCommand3.Parameters.AddWithValue("@Email", email);
+                secQuestionsCommand3.Parameters.AddWithValue("@Question", lblStreet.Text);
+                secQuestionsCommand3.Parameters.AddWithValue("@Answer", txtStreet.Text);
+                db.DoUpdateUsingCmdObj(secQuestionsCommand3);
+                error.Text = "Security Questions Updated!";
+                Response.AddHeader("Refresh", "2;URL=UserHomePage.aspx");
+            }
+            else
+            {
+                error.Text = "Security Questions Cannot Be Left Blank";
             }
         }
 
